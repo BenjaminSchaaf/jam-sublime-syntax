@@ -1,0 +1,4 @@
+{
+    "cmd": ["jam", "$file"],
+    "selector": "source.jam"
+}

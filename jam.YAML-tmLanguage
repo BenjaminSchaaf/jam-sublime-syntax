@@ -1,0 +1,151 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: Jam
+scopeName: source.jam
+fileTypes: [jm]
+uuid: 7424b099-61b0-471e-a716-4eb6aef06440
+
+patterns:
+- include: '#instruction'
+
+repository:
+  instruction:
+    patterns:
+    - include: '#comment'
+    - include: '#if'
+    - include: '#loops'
+    - include: '#return'
+    - include: '#break'
+    - include: '#object'
+
+  comment:
+    name: comment.line.jam
+    match: "#.*$"
+
+  object:
+    patterns:
+    - include: '#method'
+    - include: '#class'
+    - include: '#builtins'
+    - include: '#identifier'
+    - include: '#numbers'
+    - include: '#format-string'
+
+  builtins:
+    name: support.jam
+    patterns:
+    - name: support.function.jam
+      match: "puts"
+    - name: constant.language.jam
+      match: "true|false|null"
+    - name: support.class.jam
+      match: "String|Int|Float|Bool"
+
+  identifier:
+    name: entity.name.jam
+    match: "[_a-zA-Z][_a-zA-Z0-9]*"
+
+  method:
+    name: meta.function.jam
+    begin: "(def)"
+    beginCaptures:
+      '0': {name: keyword.control.jam}
+    end: "(end)"
+    endCaptures:
+      '0': {name: keyword.control.jam}
+    patterns:
+    - include: '#instruction'
+
+  constructor:
+    name: meta.function.constructor.jam
+    begin: "(new)"
+    beginCaptures:
+      '0': {name: keyword.control.jam}
+    end: "(end)"
+    endCaptures:
+      '0': {name: keyword.control.jam}
+    patterns:
+    - include: '#instruction'
+
+  class:
+    name: meta.class.jam
+    begin: "(class)"
+    beginCaptures:
+      '0': {name: keyword.control.jam}
+    end: "(end)"
+    endCaptures:
+      '0': {name: keyword.control.jam}
+    patterns:
+    - include: '#constructor'
+    - include: '#method'
+
+  return:
+    name: keyword.control.flow.jam
+    match: "(return)"
+
+  break:
+    name: keyword.control.flow.jam
+    match: "(break)"
+
+  if:
+    name: meta
+    begin: "(if)"
+    beginCaptures:
+      '0': {name: keyword.control.flow.jam}
+    end: "(end)"
+    endCaptures:
+      '0': {name: keyword.control.flow.jam}
+    patterns:
+    - name: meta
+      match: "(elif)"
+      captures:
+        '0': {name: keyword.control.flow.jam}
+    - name: meta
+      match: "(else)"
+      captures:
+        '0': {name: keyword.control.flow.jam}
+    - include: '#instruction'
+
+  loops:
+    name: meta
+    begin: "(while|loop)"
+    beginCaptures:
+      '0': {name: keyword.control.flow.jam}
+    end: "(end)"
+    endCaptures:
+      '0': {name: keyword.control.flow.jam}
+    patterns:
+    - include: '#instruction'
+
+  format-string:
+    name: string.quoted.double.jam
+    begin: "\""
+    beginCaptures:
+      '0': {name: punctuation.definition.string.begin.jam}
+    end: "\""
+    endCaptures:
+      '0': {name: punctuation.definition.string.end.jam}
+    patterns:
+    - include: '#string-interp'
+    - include: '#string-escape'
+
+  string-interp:
+    patterns:
+    - name: meta
+      begin: (#\{)
+      beginCaptures:
+        '0': {name: keyword.operator}
+      end: \}
+      endCaptures:
+        '0': {name: keyword.operator}
+      patterns:
+      - include: '#object'
+
+  string-escape:
+    name: string
+    match: (\\\\\")|(\\\\#\{)
+
+  numbers:
+    name: constant.numeric.jam
+    match: \b([0-9]([0-9_]*[0-9])?)|(([0-9]([0-9_]*[0-9])?)?\.([0-9]([0-9_]*[0-9])?))|(([0-9]([0-9_]*[0-9])?)\.([0-9]([0-9_]*[0-9])?)?)\b
+...

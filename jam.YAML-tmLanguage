@@ -16,6 +16,8 @@ repository:
     - include: '#loops'
     - include: '#return'
     - include: '#break'
+    - include: '#import'
+    - include: '#modifiers'
     - include: '#object'
 
   comment:
@@ -24,6 +26,7 @@ repository:
 
   object:
     patterns:
+    - include: '#module'
     - include: '#method'
     - include: '#class'
     - include: '#builtins'
@@ -44,6 +47,17 @@ repository:
   identifier:
     name: entity.name.jam
     match: "[_a-zA-Z][_a-zA-Z0-9]*"
+
+  module:
+    name: meta.module.jam
+    begin: "(module)"
+    beginCaptures:
+      '0': {name: keyword.control.jam}
+    end: "(end)"
+    endCaptures:
+      '0': {name: keyword.control.jam}
+    patterns:
+    - include: '#instruction'
 
   method:
     name: meta.function.jam
@@ -116,6 +130,15 @@ repository:
       '0': {name: keyword.control.flow.jam}
     patterns:
     - include: '#instruction'
+
+  import:
+    match: "(import)"
+    captures:
+      '0': {name: keyword.other.jam}
+
+  modifiers:
+    name: keyword.other.jam
+    match: "const"
 
   format-string:
     name: string.quoted.double.jam

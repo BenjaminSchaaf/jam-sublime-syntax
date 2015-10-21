@@ -228,6 +228,19 @@
 				</dict>
 			</array>
 		</dict>
+		<key>import</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.jam</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(import)</string>
+		</dict>
 		<key>instruction</key>
 		<dict>
 			<key>patterns</key>
@@ -251,6 +264,14 @@
 				<dict>
 					<key>include</key>
 					<string>#break</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#import</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#modifiers</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -322,6 +343,45 @@
 				</dict>
 			</array>
 		</dict>
+		<key>modifiers</key>
+		<dict>
+			<key>match</key>
+			<string>const</string>
+			<key>name</key>
+			<string>keyword.other.jam</string>
+		</dict>
+		<key>module</key>
+		<dict>
+			<key>begin</key>
+			<string>(module)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.jam</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(end)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.jam</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.module.jam</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#instruction</string>
+				</dict>
+			</array>
+		</dict>
 		<key>numbers</key>
 		<dict>
 			<key>match</key>
@@ -333,6 +393,10 @@
 		<dict>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#module</string>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#method</string>

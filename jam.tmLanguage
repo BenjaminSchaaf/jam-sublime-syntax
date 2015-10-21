@@ -48,6 +48,12 @@
 					<key>name</key>
 					<string>support.class.jam</string>
 				</dict>
+				<dict>
+					<key>match</key>
+					<string>self</string>
+					<key>name</key>
+					<string>constant.other.jam</string>
+				</dict>
 			</array>
 		</dict>
 		<key>class</key>

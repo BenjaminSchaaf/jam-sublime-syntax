@@ -43,6 +43,8 @@ repository:
       match: "true|false|null"
     - name: support.class.jam
       match: "String|Int|Float|Bool"
+    - name: constant.other.jam
+      match: "self"
 
   identifier:
     name: entity.name.jam

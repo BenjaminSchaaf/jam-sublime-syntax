@@ -44,7 +44,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>String|Int|Float|Bool</string>
+					<string>String|Int|Real|Bool</string>
 					<key>name</key>
 					<string>support.class.jam</string>
 				</dict>

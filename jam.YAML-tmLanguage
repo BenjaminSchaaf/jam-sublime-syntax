@@ -42,7 +42,7 @@ repository:
     - name: constant.language.jam
       match: "true|false|null"
     - name: support.class.jam
-      match: "String|Int|Float|Bool"
+      match: "String|Int|Real|Bool"
     - name: constant.other.jam
       match: "self"
 

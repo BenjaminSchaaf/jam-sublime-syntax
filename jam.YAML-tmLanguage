@@ -52,10 +52,10 @@ repository:
 
   module:
     name: meta.module.jam
-    begin: "(module)"
+    begin: \b(module)\b
     beginCaptures:
       '0': {name: keyword.control.jam}
-    end: "(end)"
+    end: \b(end)\b
     endCaptures:
       '0': {name: keyword.control.jam}
     patterns:
@@ -63,10 +63,10 @@ repository:
 
   method:
     name: meta.function.jam
-    begin: "(def)"
+    begin: \b(def)\b
     beginCaptures:
       '0': {name: keyword.control.jam}
-    end: "(end)"
+    end: \b(end)\b
     endCaptures:
       '0': {name: keyword.control.jam}
     patterns:
@@ -74,10 +74,10 @@ repository:
 
   constructor:
     name: meta.function.constructor.jam
-    begin: "(new)"
+    begin: \b(new)\b
     beginCaptures:
       '0': {name: keyword.control.jam}
-    end: "(end)"
+    end: \b(end)\b
     endCaptures:
       '0': {name: keyword.control.jam}
     patterns:
@@ -85,62 +85,62 @@ repository:
 
   class:
     name: meta.class.jam
-    begin: "(class)"
+    begin: \b(class)\b
     beginCaptures:
       '0': {name: keyword.control.jam}
-    end: "(end)"
+    end: \b(end)\b
     endCaptures:
       '0': {name: keyword.control.jam}
     patterns:
     - include: '#constructor'
-    - include: '#method'
+    - include: '#object'
 
   return:
     name: keyword.control.flow.jam
-    match: "(return)"
+    match: \b(return)\b
 
   break:
     name: keyword.control.flow.jam
-    match: "(break)"
+    match: \b(break)\b
 
   if:
     name: meta
-    begin: "(if)"
+    begin: \b(if)\b
     beginCaptures:
       '0': {name: keyword.control.flow.jam}
-    end: "(end)"
+    end: \b(end)\b
     endCaptures:
       '0': {name: keyword.control.flow.jam}
     patterns:
     - name: meta
-      match: "(elif)"
+      match: \b(elif)\b
       captures:
         '0': {name: keyword.control.flow.jam}
     - name: meta
-      match: "(else)"
+      match: \b(else)\b
       captures:
         '0': {name: keyword.control.flow.jam}
     - include: '#instruction'
 
   loops:
     name: meta
-    begin: "(while|loop)"
+    begin: \b(while|loop)\b
     beginCaptures:
       '0': {name: keyword.control.flow.jam}
-    end: "(end)"
+    end: \b(end)\b
     endCaptures:
       '0': {name: keyword.control.flow.jam}
     patterns:
     - include: '#instruction'
 
   import:
-    match: "(import)"
+    match: \b(import)\b
     captures:
       '0': {name: keyword.other.jam}
 
   modifiers:
     name: keyword.other.jam
-    match: "const"
+    match: \b(const|ref)\b
 
   format-string:
     name: string.quoted.double.jam

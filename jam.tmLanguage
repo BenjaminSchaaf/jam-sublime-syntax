@@ -20,7 +20,7 @@
 		<key>break</key>
 		<dict>
 			<key>match</key>
-			<string>(break)</string>
+			<string>\b(break)\b</string>
 			<key>name</key>
 			<string>keyword.control.flow.jam</string>
 		</dict>
@@ -59,7 +59,7 @@
 		<key>class</key>
 		<dict>
 			<key>begin</key>
-			<string>(class)</string>
+			<string>\b(class)\b</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -69,7 +69,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(end)</string>
+			<string>\b(end)\b</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>0</key>
@@ -88,7 +88,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>#method</string>
+					<string>#object</string>
 				</dict>
 			</array>
 		</dict>
@@ -102,7 +102,7 @@
 		<key>constructor</key>
 		<dict>
 			<key>begin</key>
-			<string>(new)</string>
+			<string>\b(new)\b</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -112,7 +112,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(end)</string>
+			<string>\b(end)\b</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>0</key>
@@ -177,7 +177,7 @@
 		<key>if</key>
 		<dict>
 			<key>begin</key>
-			<string>(if)</string>
+			<string>\b(if)\b</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -187,7 +187,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(end)</string>
+			<string>\b(end)\b</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>0</key>
@@ -210,7 +210,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(elif)</string>
+					<string>\b(elif)\b</string>
 					<key>name</key>
 					<string>meta</string>
 				</dict>
@@ -224,7 +224,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(else)</string>
+					<string>\b(else)\b</string>
 					<key>name</key>
 					<string>meta</string>
 				</dict>
@@ -245,7 +245,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(import)</string>
+			<string>\b(import)\b</string>
 		</dict>
 		<key>instruction</key>
 		<dict>
@@ -288,7 +288,7 @@
 		<key>loops</key>
 		<dict>
 			<key>begin</key>
-			<string>(while|loop)</string>
+			<string>\b(while|loop)\b</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -298,7 +298,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(end)</string>
+			<string>\b(end)\b</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>0</key>
@@ -320,7 +320,7 @@
 		<key>method</key>
 		<dict>
 			<key>begin</key>
-			<string>(def)</string>
+			<string>\b(def)\b</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -330,7 +330,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(end)</string>
+			<string>\b(end)\b</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>0</key>
@@ -352,14 +352,14 @@
 		<key>modifiers</key>
 		<dict>
 			<key>match</key>
-			<string>const</string>
+			<string>\b(const|ref)\b</string>
 			<key>name</key>
 			<string>keyword.other.jam</string>
 		</dict>
 		<key>module</key>
 		<dict>
 			<key>begin</key>
-			<string>(module)</string>
+			<string>\b(module)\b</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -369,7 +369,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(end)</string>
+			<string>\b(end)\b</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>0</key>
@@ -432,7 +432,7 @@
 		<key>return</key>
 		<dict>
 			<key>match</key>
-			<string>(return)</string>
+			<string>\b(return)\b</string>
 			<key>name</key>
 			<string>keyword.control.flow.jam</string>
 		</dict>

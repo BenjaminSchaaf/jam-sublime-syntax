@@ -1,5 +1,7 @@
 # Syntax Highlighting for Jam
 
+[![Package Control](https://packagecontrol.herokuapp.com/downloads/Jam%20Language.svg?style=flat-square)](https://packagecontrol.io/packages/Jam%20Language)
+
 A very simple syntax highlighting package for [Jam](http://lets-jam.org) built
 for [Sublime Text 2/3](http://www.sublimetext.com/).
 

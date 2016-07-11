@@ -38,13 +38,13 @@ repository:
     name: support.jam
     patterns:
     - name: support.function.jam
-      match: "puts"
+      match: \bputs\b
     - name: constant.language.jam
-      match: "true|false|null"
+      match: \b(true|false|null)\b
     - name: support.class.jam
-      match: "String|Int|Real|Bool"
+      match: \b(String|Int|Real|Bool)\b
     - name: constant.other.jam
-      match: "self"
+      match: \bself\b
 
   identifier:
     name: entity.name.jam

@@ -32,25 +32,25 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>puts</string>
+					<string>\bputs\b</string>
 					<key>name</key>
 					<string>support.function.jam</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>true|false|null</string>
+					<string>\b(true|false|null)\b</string>
 					<key>name</key>
 					<string>constant.language.jam</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>String|Int|Real|Bool</string>
+					<string>\b(String|Int|Real|Bool)\b</string>
 					<key>name</key>
 					<string>support.class.jam</string>
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>self</string>
+					<string>\bself\b</string>
 					<key>name</key>
 					<string>constant.other.jam</string>
 				</dict>

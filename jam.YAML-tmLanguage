@@ -140,7 +140,7 @@ repository:
 
   modifiers:
     name: keyword.other.jam
-    match: \b(const|ref)\b
+    match: \b(const|ref|pragma)\b
 
   format-string:
     name: string.quoted.double.jam

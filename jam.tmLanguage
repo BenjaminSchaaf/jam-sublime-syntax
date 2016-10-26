@@ -352,7 +352,7 @@
 		<key>modifiers</key>
 		<dict>
 			<key>match</key>
-			<string>\b(const|ref)\b</string>
+			<string>\b(const|ref|pragma)\b</string>
 			<key>name</key>
 			<string>keyword.other.jam</string>
 		</dict>
